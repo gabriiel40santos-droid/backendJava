@@ -186,6 +186,7 @@ src/
 | Nome | Função |
 |---|---|
 | *Isandra Micaelle Lima Dos Santos* | Back-end |
+| *(adicione os nomes aqui)* | Back-end |
 
 ---
 

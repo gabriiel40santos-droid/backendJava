@@ -186,7 +186,7 @@ src/
 | Nome | Função |
 |---|---|
 | *Isandra Micaelle Lima Dos Santos* | Back-end |
-| *(adicione os nomes aqui)* | Back-end |
+| *(Gabriel Augusto Santos Alves)* | Back-end |
 
 ---
 
@@ -201,3 +201,36 @@ src/
 ---
 
 <p align="center">Desenvolvido com 💚 para comunidades mais saudáveis</p>
+
+## 🔒 Autenticação e Segurança (Semana 7)
+
+A API agora conta com autenticação baseada em **JSON Web Tokens (JWT)** para proteção de rotas privadas e criptografia **BCrypt** para o armazenamento seguro de senhas no banco de dados.
+
+### 🛣️ Controle de Rotas da API
+
+As rotas foram divididas entre públicas (livres para acesso) e privadas (requerem o token JWT no cabeçalho da requisição).
+
+| Método | Rota | Acesso | Descrição |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/auth/register` | **Público** | Cadastro de novos usuários (LoginRequestDTO) |
+| `POST` | `/api/v1/auth/login` | **Público** | Autenticação e geração do Token JWT |
+| `GET` | `/api/v1/status` | **Público** | Verificação de status da API |
+| `POST` | `/api/v1/unidades-saude` | 🔒 **Privado** | Cadastrar nova unidade de saúde |
+| `PUT` | `/api/v1/unidades-saude/{id}` | 🔒 **Privado** | Atualizar dados de uma unidade |
+| `DELETE` | `/api/v1/unidades-saude/{id}` | 🔒 **Privado** | Deletar uma unidade do sistema |
+| `GET` | `/api/v1/usuarios` | 🔒 **Privado** | Listagem de usuários cadastrados |
+
+---
+
+### 🚀 Como testar no Postman / Insomnia
+
+#### 1. Cadastrar um Usuário (`POST /api/v1/auth/register`)
+Envie os dados do novo usuário no corpo da requisição (a senha será criptografada automaticamente com BCrypt antes de salvar).
+* **Body (JSON):**
+```json
+{
+  "nome": "Gabriel Aluno",
+  "email": "gabriel@saude.gov.br",
+  "senha": "senhaSegura123",
+  "role": "ADMIN"
+}

@@ -187,6 +187,11 @@ src/
 |---|---|
 | *Isandra Micaelle Lima Dos Santos* | Back-end |
 | *(Gabriel Augusto Santos Alves)* | Back-end |
+| *(Lislanny Silva Alves)* | Back-end |
+| *(Ismael Silva de Melo)* | Back-end |
+| *(Ivanildo Jose de Holanda)* | Back-end |
+| *(Nycollas Douglas da Silva)* | Back-end |
+
 
 ---
 
